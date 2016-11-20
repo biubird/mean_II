@@ -1,10 +1,8 @@
 App.factory('questionFactory', function($http){
     var factory = {};
 
-    factory.createQuestion = function(newQuestion,callback){
-        $http.post('/questions/create',newQuestion).success(function(status){
-            callback(status);
-        });
+    factory.createQuestion = function(newQuestion){
+        return $http.post('/questions/create', newQuestion)
     };
 
     factory.showQuestions = function(callback){
